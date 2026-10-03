@@ -263,7 +263,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* Contenedor principal 3D */
 .flip-card {
   background-color: transparent;
   height: 380px;
@@ -357,7 +356,6 @@ body {
   justify-content: center;
 }
 
-/* Fondo oscurecido para resaltar el detalle */
 .card-back-darken {
   position: absolute;
   top: 0;
@@ -420,10 +418,86 @@ body {
 }
 
 /* ==========================================
-   SECCIÓN PRECIOS
+   SECCIÓN PRECIOS Y FORMAS DE PAGO
    ========================================== */
 .pricing {
   padding: 80px 0;
+}
+
+.pricing-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+/* Selector de Moneda */
+.currency-toggle-wrapper {
+  text-align: center;
+}
+
+.currency-toggle-wrapper input[type="radio"] {
+  display: none;
+}
+
+.toggle-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  margin: 0 5px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#usd-toggle:checked ~ label[for="usd-toggle"],
+#ars-toggle:checked ~ label[for="ars-toggle"] {
+  background: linear-gradient(90deg, var(--primary-neon), var(--accent));
+  color: #000;
+  border-color: transparent;
+  font-weight: 800;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* Alternancia de Bloques */
+.pricing-group {
+  display: none;
+}
+
+#usd-toggle:checked ~ .usd-group {
+  display: block;
+}
+
+#ars-toggle:checked ~ .ars-group {
+  display: block;
+}
+
+/* Insignias de Métodos de Pago */
+.payment-method-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.paypal-badge {
+  background: rgba(0, 112, 186, 0.15);
+  border: 1px solid #0070ba;
+  color: #0070ba;
+}
+
+.mp-badge {
+  background: rgba(0, 158, 227, 0.15);
+  border: 1px solid #009ee3;
+  color: #009ee3;
 }
 
 .pricing-grid {
@@ -490,20 +564,40 @@ body {
 
 .price .amount {
   font-family: var(--font-title);
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 900;
   color: #fff;
 }
 
 .price .currency {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
-.total-text {
-  font-size: 0.85rem;
+/* Pasos de Pago en Cuotas */
+.payment-steps {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 15px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.payment-steps p {
+  font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 25px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.payment-steps p:last-child {
+  margin-bottom: 0;
+}
+
+.payment-steps p span {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .savings-text {
