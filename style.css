@@ -303,6 +303,11 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  z-index: 2;
+}
+
+.flip-card:hover .flip-card-front {
+  pointer-events: none;
 }
 
 .card-overlay {
@@ -354,6 +359,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 
 .card-back-darken {
@@ -368,9 +374,10 @@ body {
 
 .card-back-content {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   padding: 25px;
   text-align: left;
+  transform: translateZ(30px);
 }
 
 .card-back-content h4 {
@@ -401,6 +408,8 @@ body {
 }
 
 .btn-card-action {
+  position: relative;
+  z-index: 10;
   display: block;
   text-align: center;
   background: var(--primary);
@@ -410,11 +419,13 @@ body {
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.85rem;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .btn-card-action:hover {
   background: var(--primary-neon);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
 }
 
 /* ==========================================
